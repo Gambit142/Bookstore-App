@@ -8,6 +8,7 @@ const BooksPage = () => (
       <button type="button">Delete</button>
     </div>
     <input type="text" name="addBooks" placeholder="Book Title" />
+     <button type="button">Add Books</button>
   </>
 );
 
