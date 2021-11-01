@@ -2,7 +2,7 @@ import React from 'react';
 
 const CategoriesPage = () => (
   <>
-    <p>Under Construction</p>
+    <p className="text">Under Construction</p>
   </>
 );
 
