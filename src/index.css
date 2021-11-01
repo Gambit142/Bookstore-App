@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.navigation-bar {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+}
+
+.navigation-bar ul {
+  list-style: none;
+  gap: 2rem;
+}
+
+.books-container {
+  margin-top: 2rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+.text {
+  margin-top: 3rem;
+}
