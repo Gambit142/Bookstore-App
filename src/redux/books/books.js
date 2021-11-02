@@ -5,9 +5,9 @@ export const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
-export const removeBook = (index) => ({
+export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
-  index,
+  payload,
 });
 
 const reducer = (state = initialState, action) => {
