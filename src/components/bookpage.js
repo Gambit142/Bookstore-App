@@ -1,28 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook, removeBook } from './redux/books/books';
+import { addBook, removeBook } from '../redux/books/books';
+// import store from '../redux/configureStore';
 
-const dispatch = useDispatch();
+const BooksPage = (prop) => {
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const { data } = prop;
 
-const BooksPage = () => {
-  const submitBookToStore = () => {
+  const submitBookToStore = (e) => {
+    e.preventDefault();
+    if (title === '' || author === '') return;
     const newBook = {
       id: uuidv4(),
       title,
       author,
     };
-
-    // dispatch an action and pass it the newBook object (your action's payload)
     dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
   };
+
+  const removeBookFromStore = (id) => {
+    dispatch(removeBook(id));
+  };
+
   return (
     <>
       <div className="books-container d-flex">
-        <button type="button">Delete</button>
+        <div>
+          {data.map((book) => (
+            <div key={book.id}>
+              {book.title}
+              {book.author}
+              <button type="button" onClick={() => removeBookFromStore(book.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
       </div>
-      <input type="text" name="addBooks" placeholder="Book Title" />
-      <button type="button">Add Books</button>
+      <form onSubmit={submitBookToStore} className="form-container">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          placeholder="Book Title"
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          onChange={(e) => setAuthor(e.target.value)}
+          value={author}
+          placeholder="Book Author"
+        />
+        <button type="submit">Add Books</button>
+      </form>
     </>
   );
 };
