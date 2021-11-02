@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import BooksPage from '../redux/books/books';
+import BooksPage from './bookpage';
 import CategoriesPage from '../redux/categories/categories';
 import Header from './header';
 
