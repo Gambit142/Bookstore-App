@@ -2,24 +2,22 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
-import createId from './apiCalls';
 
 const AddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const submitBookToStore = (e) => {
     e.preventDefault();
-    if (title === '' || author === '') return;
+    if (title === '' || category === 'default') return;
     const newBook = {
       id: uuidv4(),
       title,
-      author,
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
-    setAuthor('');
   };
 
   return (
@@ -32,15 +30,7 @@ const AddBook = () => {
         value={title}
         placeholder="Book Title"
       />
-      <input
-        type="text"
-        name="author"
-        id="author"
-        onChange={(e) => setAuthor(e.target.value)}
-        value={author}
-        placeholder="Book Author"
-      />
-      <select name="categories" id="books-categories">
+      <select onChange={(e) => setCategory(e.target.value)} name="categories" id="books-categories">
         <option value="default">---</option>
         <option value="Action">Action</option>
         <option value="Comic">Comic</option>
