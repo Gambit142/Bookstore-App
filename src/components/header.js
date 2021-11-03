@@ -7,7 +7,7 @@ const Header = () => (
       <h2>Bookstore CMS</h2>
       <ul className="d-flex">
         <li>
-          <Link to="/" exact> BOOKS </Link>
+          <Link to="/"> BOOKS </Link>
         </li>
         <li>
           <Link to="/categories"> CATEGORIES </Link>
