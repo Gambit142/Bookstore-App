@@ -6,19 +6,18 @@ import { addBook } from '../redux/books/books';
 const AddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const submitBookToStore = (e) => {
     e.preventDefault();
-    if (title === '' || author === '') return;
+    if (title === '' || category === 'default') return;
     const newBook = {
       id: uuidv4(),
       title,
-      author,
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
-    setAuthor('');
   };
 
   return (
@@ -31,14 +30,15 @@ const AddBook = () => {
         value={title}
         placeholder="Book Title"
       />
-      <input
-        type="text"
-        name="author"
-        id="author"
-        onChange={(e) => setAuthor(e.target.value)}
-        value={author}
-        placeholder="Book Author"
-      />
+      <select onChange={(e) => setCategory(e.target.value)} name="categories" id="books-categories">
+        <option value="default">---</option>
+        <option value="Action">Action</option>
+        <option value="Comic">Comic</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Literary Fiction">Literary Fiction</option>
+        <option value="Historical Fiction">Historical Fiction</option>
+        <option value="Detective and Mystery">Detective and Mystery</option>
+      </select>
       <button type="submit">Add Books</button>
     </form>
   );
