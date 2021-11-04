@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 .d-flex {
@@ -9,14 +10,61 @@
 }
 
 .navigation-bar {
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 5rem;
+  margin: 1.5rem 4rem;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.navigation-bar ul {
+.links-bar {
+  gap: 3rem;
+  align-items: center;
+}
+
+.links-bar h2 {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.links-bar ul {
   list-style: none;
   gap: 2rem;
+}
+
+.links-bar ul li {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.links-bar ul li:hover {
+  letter-spacing: 2.3px;
+}
+
+.links:hover,
+.links:focus,
+.links:focus-within {
+  color: #e53636;
+}
+
+.navigation-bar svg {
+  color: #0290ff;
+  padding: 0.2rem;
+  border: solid 1px #e8e8e8;
+  border-radius: 50%;
+  font-size: 1.5rem;
 }
 
 .books-container {
