@@ -3,6 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
+const randomAuthors = ['Toni Morrison', 'Charles Dickens',
+  'Mark Twain', 'J.K Rawlings',
+  'William Shakespeare', 'Dan Brown',
+  'Virginia Woolfe', 'Suzanne Collins', 'Frank Herbert',
+];
+
 const AddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
@@ -15,9 +21,11 @@ const AddBook = () => {
       id: uuidv4(),
       title,
       category,
+      author: randomAuthors[Math.floor(Math.random() * randomAuthors.length)],
     };
     dispatch(addBook(newBook));
     setTitle('');
+    setCategory('default');
   };
 
   return (
@@ -30,7 +38,7 @@ const AddBook = () => {
         value={title}
         placeholder="Book Title"
       />
-      <select onChange={(e) => setCategory(e.target.value)} name="categories" id="books-categories">
+      <select onChange={(e) => setCategory(e.target.value)} value={category} name="categories" id="books-categories">
         <option value="default">---</option>
         <option value="Action">Action</option>
         <option value="Comic">Comic</option>
