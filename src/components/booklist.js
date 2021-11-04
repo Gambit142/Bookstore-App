@@ -1,4 +1,6 @@
 import { useDispatch } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { removeBook } from '../redux/books/books';
 
 const IndividualBook = (prop) => {
@@ -11,12 +13,21 @@ const IndividualBook = (prop) => {
 
   return (
     <>
-      <div className="books-container">
+      <div className="books-container d-flex">
         <div className="book-item d-flex">
           <span className="category">{category}</span>
           <span className="title">{title}</span>
           <span className="author">{author}</span>
           <button className="remove-btn" type="submit" onClick={removeBookFromStore}>Remove</button>
+        </div>
+        <div className="percentage-completed d-flex">
+          <div className="progress-bar-div">
+            <CircularProgressbar value={70} />
+          </div>
+          <div className="percent d-flex">
+            <span className="number">64%</span>
+            <span className="completed">Completed</span>
+          </div>
         </div>
       </div>
     </>

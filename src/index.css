@@ -75,6 +75,7 @@ div#root {
 }
 
 .books-container {
+  justify-content: space-between;
   margin: 1rem 4rem 0 4rem;
   border: 1px solid #e8e8e8;
   padding: 2.5rem;
@@ -117,6 +118,36 @@ div#root {
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
+}
+
+.progress-bar-div {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.percentage-completed {
+  border-right: 1px solid #e8e8e8;
+  align-self: center;
+  display: flex;
+  gap: 0.7rem;
+  padding-right: 3rem;
+}
+
+.percent {
+  flex-direction: column;
+}
+
+.number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #121212;
+}
+
+.completed {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #121212;
 }
 
 .text {
