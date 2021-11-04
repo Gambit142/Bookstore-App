@@ -28,6 +28,11 @@ const IndividualBook = (prop) => {
             <span className="number">64%</span>
             <span className="completed">Completed</span>
           </div>
+          <div className="update-progress-div d-flex">
+            <span className="current-chapter">Current Chapter</span>
+            <span className="particular-chapter">Chapter 17: Introduction</span>
+            <span className="text">Update Progress</span>
+          </div>
         </div>
       </div>
     </>

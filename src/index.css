@@ -126,15 +126,15 @@ div#root {
 }
 
 .percentage-completed {
-  border-right: 1px solid #e8e8e8;
   align-self: center;
   display: flex;
   gap: 0.7rem;
-  padding-right: 3rem;
 }
 
 .percent {
   flex-direction: column;
+  padding-right: 3.5rem;
+  border-right: 1px solid #e8e8e8;
 }
 
 .number {
@@ -150,6 +150,36 @@ div#root {
   color: #121212;
 }
 
+.update-progress-div {
+  flex-direction: column;
+  padding-left: 3.5rem;
+}
+
+.current-chapter {
+  opacity: 0.5;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: #121212;
+}
+
+.particular-chapter {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin-top: 0.4rem;
+}
+
 .text {
-  margin-top: 3rem;
+  font-family: 'RobotoSlab';
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  background-color: #0290ff;
+  padding: 0.5rem;
+  margin-top: 1.4rem;
 }
