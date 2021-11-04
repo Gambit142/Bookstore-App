@@ -13,7 +13,8 @@ const BooksPage = () => {
 
   return (
     <>
-      {booksReducer.map((item) => <IndividualBook key={item[0]} data={item} />)}
+      {booksReducer.map((item) => (<IndividualBook key={item[0]} data={item} />
+      ))}
       <AddBook />
     </>
   );
