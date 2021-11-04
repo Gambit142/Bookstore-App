@@ -6,11 +6,13 @@ const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 const initialState = [];
 
 export const addBook = (payload) => async (dispatch) => {
-  const { id, title, category } = payload;
+  const {
+    id, title, category, author,
+  } = payload;
   await createBook(id, title, category);
   dispatch({
     type: ADD_BOOK,
-    payload: [id, [{ title, category }]],
+    payload: [id, [{ title, category, author }]],
   });
 };
 
