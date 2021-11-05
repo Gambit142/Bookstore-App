@@ -5,7 +5,13 @@ import { removeBook } from '../redux/books/books';
 
 const IndividualBook = (prop) => {
   const { data } = prop;
-  const [id, [{ title, category, author }]] = data;
+  const [id, [{
+    title,
+    category,
+    author,
+    percentage,
+    chapters,
+  }]] = data;
   const dispatch = useDispatch();
   const removeBookFromStore = () => {
     dispatch(removeBook(id));
@@ -22,15 +28,18 @@ const IndividualBook = (prop) => {
         </div>
         <div className="percentage-completed d-flex">
           <div className="progress-bar-div">
-            <CircularProgressbar value={70} />
+            <CircularProgressbar value={percentage} />
           </div>
           <div className="percent d-flex">
-            <span className="number">64%</span>
+            <span className="number">
+              {percentage}
+              %
+            </span>
             <span className="completed">Completed</span>
           </div>
           <div className="update-progress-div d-flex">
             <span className="current-chapter">Current Chapter</span>
-            <span className="particular-chapter">Chapter 17: Introduction</span>
+            <span className="particular-chapter">{chapters}</span>
             <span className="text">Update Progress</span>
           </div>
         </div>
