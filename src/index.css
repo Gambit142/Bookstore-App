@@ -90,6 +90,7 @@ div#root {
   margin: 1rem 4rem 0 4rem;
   border: 1px solid var(--OffWhite);
   padding: 2.5rem;
+  background-color: #fff;
 }
 
 .book-item {
