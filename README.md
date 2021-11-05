@@ -13,7 +13,7 @@ This **Single Page App**  was built with **React-Redux**. The main page has link
 - Books Page (Home Page) and 
 - Categories Page (irrelevant for the project milestone)
 
-When users input a `Book Title` and select a `Category`, the data is sent to this [Book API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739) and `onPageLoad`, the data in the API is fectched and stored in a **Redux Store**.
+When users input a `Book Title` and select a `Category`, the data is sent to this [Book API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739) and `onPageLoad`, the data in the API is fetched and stored in a **Redux Store**.
 
 The `Redux Store` is accessible to all components and the data in the store (_state_) can be `retrieved`, `added` to, and `deleted` when **Actions** are dispatched to the store using React-Redux `Hooks`.
 
