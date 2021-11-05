@@ -16,6 +16,7 @@
 div#root {
   margin-top: 7rem;
   padding-bottom: 3rem;
+  background-color: #fafafa;
 }
 
 .d-flex {
@@ -153,14 +154,14 @@ div#root {
 }
 
 .number {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--Montserrat);
   font-size: 2rem;
   color: #121212;
 }
 
 .completed {
   opacity: 0.5;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--Montserrat);
   font-size: 0.875rem;
   color: #121212;
 }
