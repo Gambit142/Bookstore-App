@@ -5,8 +5,17 @@
   text-decoration: none;
 }
 
+:root {
+  --Montserrat: 'Montserrat', sans-serif;
+  --RobotoSlab: 'Roboto Slab', sans-serif;
+  --OffWhite: #e8e8e8;
+  --Grey: #c4c4c4;
+  --White: #fff;
+}
+
 div#root {
   margin-top: 7rem;
+  padding-bottom: 3rem;
 }
 
 .d-flex {
@@ -16,15 +25,16 @@ div#root {
 .navigation-bar {
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 0;
-  padding: 0 4rem;
+  padding: 1.5rem 4rem;
   position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid var(--OffWhite);
   width: 100%;
+  background-color: var(--White);
+  z-index: 20;
 }
 
 .links-bar {
@@ -33,7 +43,7 @@ div#root {
 }
 
 .links-bar h2 {
-  font-family: Montserrat, sans-serif;
+  font-family: var(--Montserrat);
   font-size: 1.875rem;
   font-weight: bold;
   color: #0290ff;
@@ -46,7 +56,7 @@ div#root {
 
 .links-bar ul li {
   opacity: 0.5;
-  font-family: Montserrat, sans-serif;
+  font-family: var(--Montserrat);
   font-size: 0.813rem;
   font-weight: normal;
   font-stretch: normal;
@@ -69,7 +79,7 @@ div#root {
 .navigation-bar svg {
   color: #0290ff;
   padding: 0.2rem;
-  border: solid 1px #e8e8e8;
+  border: solid 1px var(--OffWhite);
   border-radius: 50%;
   font-size: 1.5rem;
 }
@@ -77,24 +87,25 @@ div#root {
 .books-container {
   justify-content: space-between;
   margin: 1rem 4rem 0 4rem;
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--OffWhite);
   padding: 2.5rem;
 }
 
 .book-item {
   flex-direction: column;
+  width: 50%;
 }
 
 .category {
   opacity: 0.5;
-  font-family: Montserrat, sans-serif;
+  font-family: var(--Montserrat);
   font-size: 0.875rem;
   font-weight: bold;
   color: #121212;
 }
 
 .title {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: var(--RobotoSlab);
   font-size: 1.375rem;
   font-weight: bold;
   letter-spacing: -0.2px;
@@ -102,10 +113,11 @@ div#root {
 }
 
 .author {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: var(--RobotoSlab);
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
+  margin-top: 0.25rem;
 }
 
 .remove-btn {
@@ -114,7 +126,7 @@ div#root {
   padding: 0;
   margin-top: 1.3rem;
   width: 0;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: var(--RobotoSlab);
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
@@ -123,18 +135,21 @@ div#root {
 .progress-bar-div {
   width: 3.25rem;
   height: 3.25rem;
+  align-self: center;
 }
 
 .percentage-completed {
   align-self: center;
   display: flex;
   gap: 0.7rem;
+  width: 50%;
 }
 
 .percent {
   flex-direction: column;
   padding-right: 3.5rem;
-  border-right: 1px solid #e8e8e8;
+  border-right: 1px solid var(--OffWhite);
+  align-self: center;
 }
 
 .number {
@@ -157,14 +172,14 @@ div#root {
 
 .current-chapter {
   opacity: 0.5;
-  font-family: 'RobotoSlab', sans-serif;
+  font-family: var(--RobotoSlab);
   font-size: 0.813rem;
   font-weight: 300;
   color: #121212;
 }
 
 .particular-chapter {
-  font-family: 'RobotoSlab', sans-serif;
+  font-family: var(--RobotoSlab);
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: -0.4px;
@@ -173,13 +188,90 @@ div#root {
 }
 
 .text {
-  font-family: 'RobotoSlab';
+  font-family: var(--RobotoSlab);
   font-size: 0.813rem;
   font-weight: 300;
   letter-spacing: 0.5px;
   text-align: center;
-  color: #fff;
+  color: var(--White);
   background-color: #0290ff;
   padding: 0.5rem;
   margin-top: 1.4rem;
+  width: 7rem;
+}
+
+.form-container {
+  flex-direction: column;
+  margin: 1.8rem 4rem 1.2rem 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+hr {
+  margin-top: 2.5rem;
+  margin-bottom: 1.18rem;
+  border: 1px solid var(--OffWhite);
+}
+
+.form-container h2 {
+  margin-bottom: 1.18rem;
+}
+
+.form-inputs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 1.3rem;
+}
+
+#title {
+  padding: 1rem;
+  box-shadow: 0 0 60px 0 var(--OffWhite);
+  border-radius: 4px;
+  border: solid 1px var(--OffWhite);
+  background-color: var(--White);
+  margin-right: 1.8rem;
+  width: 100%;
+  height: 100%;
+}
+
+#books-categories {
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 var(--OffWhite);
+  border: solid 1px var(--OffWhite);
+  background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: var(--Grey);
+}
+
+#title::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: var(--Grey);
+}
+
+#title:focus,
+#books-categories:focus {
+  border: 1px solid var(--Grey);
+  outline: none;
+}
+
+.submit-btn {
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: var(--RobotoSlab);
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--White);
+  border: 1px solid transparent;
 }
