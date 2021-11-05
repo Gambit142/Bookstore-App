@@ -57,7 +57,7 @@ const AddBook = () => {
           <option value="Historical Fiction">Historical Fiction</option>
           <option value="Detective and Mystery">Detective and Mystery</option>
         </select>
-        <button className="submit-btn" type="submit">Add Books</button>
+        <button className="submit-btn" type="submit">ADD BOOKS</button>
       </div>
     </form>
   );

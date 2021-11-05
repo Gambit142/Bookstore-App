@@ -24,7 +24,11 @@ const IndividualBook = (prop) => {
           <span className="category">{category}</span>
           <span className="title">{title}</span>
           <span className="author">{author}</span>
-          <button className="remove-btn" type="submit" onClick={removeBookFromStore}>Remove</button>
+          <div className="buttons d-flex">
+            <button className="comments-btn" type="submit">Comments</button>
+            <button className="remove-btn" type="submit" onClick={removeBookFromStore}>Remove</button>
+            <button className="sub-btn" type="submit">Edit</button>
+          </div>
         </div>
         <div className="percentage-completed d-flex">
           <div className="progress-bar-div">
@@ -40,7 +44,7 @@ const IndividualBook = (prop) => {
           <div className="update-progress-div d-flex">
             <span className="current-chapter">Current Chapter</span>
             <span className="particular-chapter">{chapters}</span>
-            <span className="text">Update Progress</span>
+            <span className="text">UPDATE PROGRESS</span>
           </div>
         </div>
       </div>
