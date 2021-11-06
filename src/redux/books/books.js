@@ -6,18 +6,38 @@ const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 const initialState = [];
 
 export const addBook = (payload) => async (dispatch) => {
-  const { id, title, category } = payload;
-  await createBook(id, title, category);
+  const {
+    id, title, category, author, percentage, chapters,
+  } = payload;
+
+  const bookdetails = {
+    title, author, percentage, chapters,
+  };
+
+  await createBook(id, JSON.stringify(bookdetails), category);
   dispatch({
     type: ADD_BOOK,
-    payload: [id, [{ title, category }]],
+    payload: [id, [{
+      title, category, author, percentage, chapters,
+    }]],
   });
 };
 
 export const getAllBooks = () => async (dispatch) => {
   const response = await fetch(APIURl);
   const data = await response.json();
-  const AllBooks = Object.entries(data);
+  let AllBooks = Object.entries(data);
+  AllBooks = AllBooks.map((book) => {
+    const [id, [{ title, category }]] = book;
+    const parsedBook = JSON.parse(title);
+    return [id, [{
+      title: parsedBook.title,
+      category,
+      percentage: parsedBook.percentage,
+      author: parsedBook.author,
+      chapters: parsedBook.chapters,
+    }]];
+  });
   dispatch({
     type: GET_BOOKS,
     AllBooks,
